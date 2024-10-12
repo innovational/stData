@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="margin-top: 50px;">
+    <div style="text-align: center"><button onclick="clickFind()" style="width: 100px;height: 30px;">查询</button></div>
+    <pre id="resBox" style="margin-top: 10px;text-align: center;font-size: 20px;line-height: 30px;"></pre>
+</div>
+</body>
+<script src="https://gitee.com/Innovational/stData/raw/master/st20List.js"></script>
+<script src="https://gitee.com/Innovational/stData/raw/master/comToolCore.js"></script>
+<script src="https://gitee.com/Innovational/stData/raw/master/findOpenCore.js"></script>
+<script>
+    function clickFind() {
+        const dom = document.getElementById('resBox');
+        dom.innerText = '计算中...';
+        window.find8().then(res => {
+            let str = '';
+            if (res && res.length) {
+                res.forEach(item => {
+                    str += `${item.name} (${item.code})\n`;
+                });
+            }
+            dom.innerText = str || '无';
+        }).catch(err => {
+            dom.innerText = '错误：' + JSON.stringify(err);
+        });
+    }
+</script>
+</html>
