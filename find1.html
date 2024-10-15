@@ -7,14 +7,14 @@
 <body>
 <div style="margin-top: 50px;">
     <div style="text-align: center"><button onclick="clickFind()" style="width: 100px;height: 30px;">查询</button></div>
-    <pre id="resBox" style="margin-top: 10px;text-align: center;font-size: 20px;line-height: 30px;">停止维护</pre>
+    <pre id="resBox" style="margin-top: 10px;text-align: center;font-size: 20px;line-height: 30px;"></pre>
 </div>
 </body>
 <script src="./st20List.js"></script>
 <script src="./comToolCore.js"></script>
 <script src="./findOpenCore.js"></script>
 <script>
-    /*function clickFind() {
+    function clickFind() {
         const dom = document.getElementById('resBox');
         dom.innerText = '计算中...';
         window.find8().then(res => {
@@ -28,6 +28,6 @@
         }).catch(err => {
             dom.innerText = '错误：' + JSON.stringify(err);
         });
-    }*/
+    }
 </script>
 </html>
